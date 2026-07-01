@@ -71,13 +71,17 @@ Preprocessing happens before parsing.
 - No scope
 - No evaluation
 
-### 2.2 `@include`
+### 2.2 `@undefine`
+@undefine NAME
+- Purely to revert the effect of a previous @define, if applicable.
+
+### 2.3 `@include`
 `@include "file.alsh`
 - Raw text inclusion
 - No isolation
 - Order matters
 
-### 2.3 @import
+### 2.4 @import
 `@import "file.alsh"`
 - Loads file as a module
 - Makes available:
@@ -86,7 +90,7 @@ Preprocessing happens before parsing.
 - Does NOT paste text
 - Avoids duplication
 
-### 2.4 Entry point
+### 2.5 Entry point
 `@main`
 
 Marks a function as entry point:
@@ -94,26 +98,25 @@ Marks a function as entry point:
 @main
 function start() { ... }
 ```
-
+### 2.6 Top-level code
 `@justrunit`
 
 Allows top-level execution:
-
 `@justrunit`
 
-### 2.5 `@justcarryon`
+### 2.7 `@justcarryon`
 `@justcarryon`
 
 When this directive is present, runtime errors during command execution or function calls
 are reported but do not abort script execution. The script continues with the next statement.
 
-### 2.6`@noffi`
+### 2.8`@noffi`
 `@noffi`
 
 When this directive is present, any `c::` function call in the current file is disabled.
 The call is removed during preprocessing so the C function is never invoked.
 
-### 2.7 @stdlib`
+### 2.9 @stdlib`
 `@stdlib`
 
 Enables the ALSH standard library shorthand names in the current script.
