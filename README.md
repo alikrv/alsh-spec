@@ -10,5 +10,5 @@ Alsh code written as per the NORMAL spec is a lot more chaotic and, as I like to
 
 ### more info:
 ALSH is predominantly a Rust project. Alsh (the shell) is written wholely in Rust;
-and the compiler is written _almost_ all in Rust (reuses a lot of alsh (the shell) code, most notably the parser) + a tiny runtime ("the Alsh runtime") in C, which is needed for arena-based allocation and string helpers used by the compiler.
+and the compiler is written _almost_ all in Rust (reuses a lot of alsh (the shell) code, most notably the parser) + a tiny runtime ("the Alsh runtime") in C, which is needed for arena-based allocation and string helpers used by the compiler; as well as the preprocessor (written in C by a friend)
 _(the alsh runtime is not something big as the name would suggest, and is inside of the alshc repo)_
